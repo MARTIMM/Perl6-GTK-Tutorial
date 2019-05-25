@@ -1,0 +1,19 @@
+/*
+@fg-color: #ff7000;
+@bg-color: #ffffe8;
+@tbl-fg-color: #00a8a8;
+@tbl-bg-color: #feffff;
+*/
+
+
+html body {
+  //font-size: 0.9em !important;
+  background-color: white !important;
+}
+
+pre {
+  //background-color: white !important;
+  color: red !important;
+  border-color: #000000 !important;
+  border-width: 4px !important;
+}
