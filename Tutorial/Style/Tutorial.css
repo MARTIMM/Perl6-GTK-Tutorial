@@ -11,9 +11,8 @@ html body {
   background-color: white !important;
 }
 
-pre {
+.codeblock {
   //background-color: white !important;
   color: red !important;
-  border-color: #000000 !important;
-  border-width: 4px !important;
+  border: #000 solid 4px;
 }

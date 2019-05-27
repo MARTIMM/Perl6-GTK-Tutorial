@@ -2,11 +2,26 @@
 id: "GtkTut"
 title: The Perl6 GTK+ Tutorial
 author: Marcel Timmerman
-date: March 25, 2019
-version: 0.0.1
-output: pdf_document
+date: Version 0.0.1, March 25, 2019
+keywords: perl6,gtk,gtk3,gtk+,gdk,glib,glade
+#output: pdf_document
+output:
+  pdf_document:
+    #path: Tutorial.epub
+    #path: Tutorial.pdf
+    papersize: A4
+    toc: true
+    toc-depth: 6
+    #cover-image: images/widgets-1.png
+    pandoc_args: [
+      '-f markdown+fenced_code_attributes+tex_math_single_backslash',
+      #'--css=Style/Tutorial.css',
+      '--pdf-engine=pdflatex',
+      '--strip-comments',
+      '-o Tutorial.pdf'
+    ]
+fontsize: 12pt
 
-pandoc_args: ['--toc', '--toc-depth=6']
 export_on_save:
   pandoc: true
 
@@ -23,13 +38,20 @@ ebook:
     no-default-epub-cover: false
     pretty-print: true
 ---
+<!--
+pandoc -o Tutorial.pdf\
+  -f markdown+fenced_code_attributes+tex_math_single_backslash\
+  --pdf-engine=pdflatex --strip-comments\
+  Tutorial.md Parts/simple-example.md Parts/installation.md\
+  Parts/basics.md
 
-<!-- @import "Style/Tutorial.less" -->
+pandoc -o Tutorial.pdf\
+  Tutorial.md Parts/simple-example.md Parts/installation.md\
+  Parts/basics.md
+-->
 
 # Preface {ignore=true}
 This tutorial is about using the Graphical User Interface library **GTK+** while writing code in the programming language **Perl6** instead of **C** in which the library is written. There are a few packages written to help you with that. This tutorial will first explain the modules in the package `GTK::V3` and then the modules from `GTK::Glade`. The first is about building your GUI on your own and the latter is about making use of the generated *XML* file from the GTK+ GUI designer program *Glade*. At the end of the tutorial some of the design ideas of GTK::V3 are explained followed by a reference of the modules.
-
-# Contents {ignore=true}
 
 <!--
 [toc]
@@ -63,11 +85,14 @@ This tutorial is about using the Graphical User Interface library **GTK+** while
    classes
    class engines
    testing
+   inspector
 
 1. Reference
    1. GTK::V3
    1. GTK::Glade
 -->
+
+<!-- @import "Parts/simple-example.md" -->
 
 <!-- @import "Parts/installation.md" -->
 
